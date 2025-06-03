@@ -4,14 +4,18 @@ import "./FoodItem.css";
 import { assets } from "../../../assets/assets";
 import { ViewMore } from "../ViewMore/ViewMore";
 import Modal from "react-modal";
+import { StoreContext } from "../../../context/StoreContext";
 
 Modal.setAppElement('#root');
 
 const FoodItem = ({ curItem }) => {
 
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { _id, name, price, description, image } = curItem;
-  const image_url = "http://localhost:5000/images/" + image;
+
+  const { url } = useContext(StoreContext)
+  const image_url = url + "/images/" + image;
 
   return (
     <>

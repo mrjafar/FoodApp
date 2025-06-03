@@ -19,6 +19,8 @@ export const StoreContextProvider = (props) => {
   const [token, setToken] = useState("")
   // const [food_list, setFood_list] = useState([])
 
+  const url = "http://localhost:5000";
+
   // const [searchFilterFood, setSearchFilterFood] = useState([])
   const dispatch = useDispatch();
   const location = useLocation();
@@ -119,6 +121,7 @@ export const StoreContextProvider = (props) => {
     // addToCart,
     // removeFromCart,
     // getTotalCartAmount,
+    url,
     isAuthenticated,
     setIsAuthenticated,
     category, setCategory,

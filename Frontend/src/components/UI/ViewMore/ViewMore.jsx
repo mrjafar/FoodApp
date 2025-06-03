@@ -9,19 +9,19 @@ import { FaCartPlus } from 'react-icons/fa';
 import { MdPreview } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, removeFromCart } from '../../../features/ItemsSlice/ItemsSlice';
-import { api} from '../../../api/fetchApi';
+import { api } from '../../../api/fetchApi';
 
 
 export const ViewMore = ({ curItem, setIsModalOpen }) => {
     const cartItems = useSelector((state) => state.foodItems.cartItems);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const { token } = useContext(StoreContext);
+    const { url, token } = useContext(StoreContext);
     const headers = { Authorization: `Bearer ${token}` };
-    
+
 
     const { _id, name, price, description, image, category, material, weight } = curItem;
-    const image_url = "http://localhost:5000/images/" + image;
+    const image_url = url + "/images/" + image;
 
     // handle quantity functionality------
     const handleAddToCartImage = async () => {

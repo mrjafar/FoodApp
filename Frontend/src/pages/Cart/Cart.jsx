@@ -15,7 +15,7 @@ const Cart = () => {
   // console.log(food_list);
 
 
-  const { token } = useContext(StoreContext);
+  const { url, token } = useContext(StoreContext);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -60,7 +60,7 @@ const Cart = () => {
         ) : (
           food_list.map((curItem, index) => {
             const { _id, name, image, price } = curItem;
-            const image_url = "http://localhost:5000/images/" + image;
+            const image_url = url + "/images/" + image;
             if (cartItems[_id] > 0) {
               return (
                 <div key={index}>
