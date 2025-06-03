@@ -5,8 +5,6 @@ import Contact from "./pages/Contact/Contact";
 import { PlaceOrder } from "./pages/PlaceOrder/PlaceOrder";
 import Cart from "./pages/Cart/Cart";
 import { Home } from "./pages/Home/Home";
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "./firebaseConfig";
 import LoginPopup from "./components/UI/LoginPopUP/LoginPopup";
 import { StoreContext } from "./context/StoreContext";
 import { Profile } from "./pages/Profile/Profile";
