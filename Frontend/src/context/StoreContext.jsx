@@ -89,7 +89,7 @@ export const StoreContextProvider = (props) => {
 
   const fetchCartData = async (token) => {
     // console.log(token);
-    
+
     const headers = { Authorization: `Bearer ${token}` };
     // console.log("Headers Sent:", headers)
     try {
