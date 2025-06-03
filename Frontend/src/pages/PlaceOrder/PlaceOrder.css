@@ -1,0 +1,115 @@
+.place-order {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 50px;
+  margin-top: 50px;
+}
+
+.place-order-left {
+  /* width: 60vw  ; */
+  max-width: max(40%, 500px);
+
+  & .title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 50px;
+  }
+
+  input {
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #c5c5c5;
+    border-radius: 4px;
+    outline-color: tomato;
+
+    &:hover,
+    &:focus {
+      border-color: darksalmon;
+      box-shadow: 0 0 5px rgba(255, 99, 71, 0.5);
+    }
+  }
+
+  .multi-fields {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+  }
+}
+
+.place-order-right {
+  width: 100%;
+  max-width: max(40%, 500px);
+  margin-top: 1.5rem;
+}
+
+.pay {
+  background: #f9f9f9;
+  padding: 10px 0px;
+  border-radius: 8px;
+  max-width: 500px;
+  /* margin: auto; */
+
+  & h3 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+}
+
+.payment-methods {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.field {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50px 1fr 10px;
+  align-items: center;
+  padding: 0 1rem;
+  gap: 10px;
+
+  &:hover {
+    background-color: #e3dddd;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+  img {
+    width: 50px;
+  }
+  input[type="radio"] {
+    accent-color: #ff0000; /* Style radio buttons */
+  }
+
+  label {
+    font-size: 16px;
+    color: #555;
+    cursor: pointer;
+  }
+}
+
+.place-order .cart-total button {
+  margin-top: 30px;
+}
+
+@media (width <= 768px) {
+  .place-order {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .place-order-left {
+    max-width: 100%;
+  }
+
+  .place-order-right {
+    max-width: 100%;
+  }
+}

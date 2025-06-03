@@ -1,0 +1,157 @@
+.explore-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 10px; /* Added padding for horizontal spacing */
+}
+
+.explore-menu h1 {
+  color: #262626;
+  font-weight: 500;
+  font-size: 1.8rem; /* Use rem for font sizes */
+  margin-bottom: 0.5rem;
+}
+
+.explore-menu p {
+  max-width: 100%;
+  color: #808080;
+  font-size: 1rem; /* Use rem for font sizes */
+  line-height: 1.5; /* Added line height for better readability */
+}
+
+.explore-menu .explore-menu-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+  overflow-x: auto; /* Changed from scroll to auto */
+  scroll-snap-type: x mandatory; /* Added for smoother scrolling */
+  padding-bottom: 10px; /* Add padding at the bottom for scrollbar */
+}
+
+.explore-menu .explore-menu-list::-webkit-scrollbar {
+  display: none;
+}
+
+.explore-menu .explore-menu-list-items {
+  display: flex; /* Added for vertical alignment of image and text */
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10px; /* Added horizontal margin between items */
+  scroll-snap-align: start; /* Added for smoother scrolling */
+  min-width: fit-content; /* Important, prevents items from stretching */
+}
+
+.explore-menu-list-items img {
+  width: 15vw; /* Changed to vw */
+  min-width: 60px; /* Adjusted min-width */
+  max-width: 100px; /* Added max-width */
+  height: auto; /* Maintain aspect ratio */
+  cursor: pointer;
+  border-radius: 50%;
+  transition: transform 0.2s ease; /* Changed property for consistency */
+}
+
+.explore-menu-list-items img:hover {
+  transform: scale(1.1);
+}
+
+.explore-menu-list-items p {
+  margin-top: 0.5rem; /* Use rem for margin */
+  color: #747474;
+  text-align: center;
+  font-size: 0.8rem; /* Use rem for font size */
+  cursor: pointer;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.explore-menu hr {
+  margin: 1rem 0; /* Use rem for margin */
+  height: 2px;
+  background-color: #e2e2e2;
+  border: none;
+}
+
+.explore-menu-list-items .active {
+  border: 4px solid tomato;
+  padding: 2px;
+}
+
+/* Media queries for responsiveness */
+@media (min-width: 1200px) {
+  .explore-menu-list {
+    justify-content: space-around; /* Spread out items on large screens */
+    overflow-x: unset; /* disable scrollbar on large screens */
+    scroll-snap-type: none;
+    padding-bottom: 0;
+  }
+  .explore-menu-list-items {
+    margin: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .explore-menu h1 {
+    font-size: 1.6rem;
+  }
+
+  .explore-menu p {
+    font-size: 0.9rem;
+  }
+
+  .explore-menu-list-items img {
+    width: 20vw;
+    min-width: 70px;
+    max-width: 90px;
+  }
+
+  .explore-menu-list-items p {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .explore-menu h1 {
+    font-size: 1.4rem;
+  }
+
+  .explore-menu p {
+    font-size: 0.8rem;
+  }
+
+  .explore-menu-list-items img {
+    width: 25vw;
+    min-width: 60px;
+    max-width: 80px;
+  }
+
+  .explore-menu-list-items p {
+    font-size: 0.6rem;
+  }
+  .explore-menu {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .explore-menu h1 {
+    font-size: 1.2rem;
+  }
+
+  .explore-menu p {
+    font-size: 0.7rem;
+  }
+
+  .explore-menu-list-items img {
+    width: 30vw;
+    min-width: 50px;
+    max-width: 70px;
+  }
+
+  .explore-menu-list-items p {
+    font-size: 0.5rem;
+  }
+  .explore-menu {
+    gap: 10px;
+  }
+}

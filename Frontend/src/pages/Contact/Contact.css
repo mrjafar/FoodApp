@@ -1,0 +1,124 @@
+.container {
+  width: 100%;
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); /* Adapts dynamically */
+  gap: 1rem;
+}
+
+.form-container {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column; /* Ensures stacking on smaller screens */
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.map-container {
+  width: 500px;
+  height: 400px;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+
+  & iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+}
+
+.inputs div {
+  display: flex;
+  flex-direction: row; /* Aligns elements in a row */
+  align-items: center;
+  justify-content: space-between;
+  gap: .3rem;
+  flex-wrap: auto;
+}
+
+input,
+textarea {
+  padding: 0.5rem;
+  width: 100%; /* Takes full width on smaller screens */
+  max-width: 400px; /* Limits excessive stretching */
+  border: 1px solid #c9c9c9;
+  border-radius: 5px;
+}
+
+textarea {
+  outline: none;
+  margin-left: 0; /* Removes margin for better alignment */
+}
+
+.msg-btn {
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  border-radius: 0.6rem;
+  line-height: 100%;
+  padding: 0.5rem 1rem;
+}
+
+/* Responsive Breakpoints */
+@media (max-width <= 768px) {
+  .container {
+    grid-template-columns: 1fr; /* Stacks items vertically */
+  }
+
+  .form-container {
+    align-items: flex-start;
+  }
+  .map-container {
+    width: 50%;
+    margin-bottom: 2rem;
+    padding: 0;
+  }
+
+  .inputs {
+    width: 100%;
+  }
+
+  .inputs div {
+    flex-direction: column; /* Stacks elements */
+  }
+}
+
+@media (max-width: 320px) {
+  .form-container {
+    width: 90%; /* Allows for better spacing */
+    padding: 0;
+  }
+
+  .map-container {
+    width: 100%;
+    margin-bottom: 2rem;
+    padding: 0;
+  }
+
+  .inputs div input,
+  .inputs div textarea {
+    width: 100%; /* Ensures uniform width */
+  }
+}
