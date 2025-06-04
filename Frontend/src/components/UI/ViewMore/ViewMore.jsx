@@ -14,6 +14,8 @@ import { api } from '../../../api/fetchApi';
 
 export const ViewMore = ({ curItem, setIsModalOpen }) => {
     const cartItems = useSelector((state) => state.foodItems.cartItems);
+    console.log(cartItems);
+    
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { url, token } = useContext(StoreContext);

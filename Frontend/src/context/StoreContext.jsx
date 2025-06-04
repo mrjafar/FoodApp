@@ -19,13 +19,15 @@ export const StoreContextProvider = (props) => {
   const [token, setToken] = useState("")
   // const [food_list, setFood_list] = useState([])
 
-  const url = "https://foodapp-backend-sc5z.onrender.com";
+  const url = "http://localhost:5000";
 
   // const [searchFilterFood, setSearchFilterFood] = useState([])
   const dispatch = useDispatch();
   const location = useLocation();
   const cartItems = useSelector((state) => state.foodItems.cartItems);
+  // console.log(cartItems)
   const foodList = useSelector((state) => state.foodItems.foodList) || [];
+  
 
   // const addToCart = (itemId) => {
   //   if (!cartItems[itemId]) {

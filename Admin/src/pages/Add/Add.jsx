@@ -92,7 +92,7 @@ export const Add = () => {
                     </div>
                     <div className="add-price flex-col">
                         <p>Product Price</p>
-                        <input onChange={handleInputChange} value={data.price} type="number" name='price' placeholder='$20' required />
+                        <input onChange={handleInputChange} value={data.price} type="number" name='price' placeholder='₹20' required />
                     </div>
                 </div>
                 <button type='submit' className='add-btn'>ADD</button>
