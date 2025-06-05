@@ -135,7 +135,7 @@
 
   & button:nth-child(2) {
     background-color: #f0ebe5;
-    border: .2px solid #000;
+    border: 0.2px solid #000;
     color: black;
     &:hover {
       background-color: #f1bfb6;
@@ -154,11 +154,10 @@
   right: 26rem;
 }
 
-
 @media (max-width: 768px) {
   /* Adjust the breakpoint as needed */
   .view-more {
-    flex-direction: column; /* Stack items vertically on small screens */
+    flex-direction: row; /* Stack items vertically on small screens */
     width: 98%; /* Take up most of the screen width */
     margin: 1rem auto;
     padding: 0.5rem;
@@ -179,40 +178,62 @@
   .item-detail p {
     font-size: 0.9rem;
   }
+  .icon {
+    display: none;
+  }
 }
 
 /* Media query for very small screens (e.g., older phones) */
-@media (max-width: 480px) {
+@media (max-width: 500px) {
   .view-more {
-    width: 100%;
+    width: 90%;
+    height: 90%;
     margin: 0.5rem auto;
     padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 1px;
     border-radius: 0;
     box-shadow: none;
   }
 
   .view-more figure {
-    width: 90%;
-    height: 90%;
-    margin: 0 auto;
-    margin-top: 2rem;
+    /* width: 100px; */
+    margin: auto;
+
+    & img {
+      width: 13rem;
+      margin-top: 2.5rem;
+    }
   }
   .item-detail h1 {
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
   .item-detail p {
     font-size: 0.8rem;
+
+    & .food-item-price {
+      font-size: 1rem;
+    }
   }
   .food-item_counter img {
     width: 25px;
     height: 25px;
   }
   .food-item_counter p {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
+  }
+  .category-weight {
+    font-size: 0.7rem;
+  }
+  .cross-icon {
+    color: #000;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+  .icon {
+    display: none;
+    position: absolute;
   }
 }
-
-
-
-
-

@@ -143,45 +143,49 @@ export const Navbar = ({ setShowLogin }) => {
             </NavLink>
           </ul>)
       }
+      {
+        location.pathname !== "/search" && (
+          <div className="navbar-right">
+            <NavLink to="/search" >
+              <MdSearch className={location.pathname === "/search" ? "hidden" : "search-icon"} />
+            </NavLink>
+            <NavLink to="/cart" className={({ isActive }) => (isActive ? "isCart" : "")}>
+              <TiShoppingCart style={{ fontSize: "2rem" }} />
+            </NavLink>
 
-      <div className="navbar-right">
-        <NavLink to="/search" >
-          <MdSearch className={location.pathname === "/search" ? "hidden" : "search-icon"} />
-        </NavLink>
-        <NavLink to="/cart" className={({ isActive }) => (isActive ? "isCart" : "")}>
-          <TiShoppingCart style={{ fontSize: "2rem" }} />
-        </NavLink>
-
-        {token ? (
-          <div className="navbar-profile">
-            <FaUser
-              style={{ fontSize: "1.5rem", cursor: "pointer" }}
-              title="profile"
-              className="profile-icon"
-            />
-            <IoIosArrowDown />
-            <ul className="profile-dropdown">
-              {/* <li><p onClick={goToProfile}>My Profile</p></li> */}
-              {/* <hr /> */}
-              <NavLink to="/my-orders">
-                <li>
-                  <FaBagShopping />
-                  <p>My Orders </p>
-                </li>
-              </NavLink>
-              <hr />
-              <li>
-                <MdLogout />
-                <p onClick={handleLogout} title="logout">
-                  Logout
-                </p>
-              </li>
-            </ul>
+            {token ? (
+              <div className="navbar-profile">
+                <FaUser
+                  style={{ fontSize: "1.5rem", cursor: "pointer" }}
+                  title="profile"
+                  className="profile-icon"
+                />
+                <IoIosArrowDown />
+                <ul className="profile-dropdown">
+                  {/* <li><p onClick={goToProfile}>My Profile</p></li> */}
+                  {/* <hr /> */}
+                  <NavLink to="/my-orders">
+                    <li>
+                      <FaBagShopping />
+                      <p>My Orders </p>
+                    </li>
+                  </NavLink>
+                  <hr />
+                  <li>
+                    <MdLogout />
+                    <p onClick={handleLogout} title="logout">
+                      Logout
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            ) : (
+              <button onClick={() => setShowLogin(true)} className="sign-in-btn">Sign In</button>
+            )}
           </div>
-        ) : (
-          <button onClick={() => setShowLogin(true)} className="sign-in-btn">Sign In</button>
-        )}
-      </div>
+        )
+      }
+
     </div >
   );
 };

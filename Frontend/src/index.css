@@ -73,3 +73,9 @@ button {
 ::-webkit-scrollbar-track {
   background-color: rgb(227, 212, 213);
 }
+
+@media (max-width: 500px) {
+  ::-webkit-scrollbar {
+    width: .1rem;
+  }
+}

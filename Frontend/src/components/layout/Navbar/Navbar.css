@@ -225,6 +225,33 @@ a:hover {
   .navbar-menu {
     display: none;
   }
+  .navbar-right {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .search-input {
+    font-size: 0.7rem;
+    /* padding: 5px 10px; */
+    width: auto;
+
+    &:focus {
+      width: auto;
+      font-size: 0.7rem;
+      padding: 10px 20px;
+    }
+  }
+  .search-btn {
+    width: auto;
+    font-size: 0.78rem;
+  }
 }
 
 /**!?-------------------------------------------------------*/
@@ -249,7 +276,7 @@ a:hover {
   padding: 0.3rem 0.7rem;
 }
 
-.profile-dropdown li {  
+.profile-dropdown li {
   display: flex;
   align-items: center;
   justify-content: start;
