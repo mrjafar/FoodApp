@@ -6,7 +6,7 @@ import { postData } from '../../api/fetchApi';
 import { toast } from 'react-toastify';
 
 export const Add = () => {
-    const url = "http://localhost:5000";
+    const url = "https://foodapp-backend-sc5z.onrender.com";
     const [image, setImage] = useState(false);
     const [data, setData] = useState({
         name: "",
