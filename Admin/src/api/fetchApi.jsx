@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const api = axios.create({
-    baseURL: 'https://foodapp-backend-sc5z.onrender.com',
+    baseURL: 'http://localhost:5000',
 })
 
 export const postData = (post) => {
